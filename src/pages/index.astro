@@ -127,9 +127,16 @@ const experienceCards = [
       <div data-i18n="home.location.body" class="mb-6 text-[15px] leading-[1.7] text-muted">
         Tucked away in the lush greenery of Karak, Pahang — where rivers flow, birds sing, and time slows down.
       </div>
-      <a href="/location" data-i18n="home.location.directions" class="inline-flex items-center gap-2 rounded-lg bg-forest px-6 py-3.5 text-sm font-semibold text-white no-underline hover:text-white">Get Directions</a>
+      <a href="https://maps.app.goo.gl/6tpBYuTFR3yercit9" target="_blank" rel="noopener" data-i18n="home.location.directions" class="inline-flex items-center gap-2 rounded-lg bg-forest px-6 py-3.5 text-sm font-semibold text-white no-underline hover:text-white">Get Directions</a>
     </div>
-    <ImageSlot placeholder="Map: Sungai Kerau, Karak" class="h-[280px] w-full" rounded="lg" />
+    <iframe
+      src="https://www.google.com/maps?q=3.377667,102.031556&z=15&output=embed"
+      class="h-[280px] w-full rounded-lg"
+      style="border:0;"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
   </section>
 
   <Footer />

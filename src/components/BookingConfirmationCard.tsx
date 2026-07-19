@@ -145,7 +145,7 @@ export default function BookingConfirmationCard() {
               <div className="text-sm font-semibold text-ink">{t.next.directionsTitle}</div>
               <div className="text-[13px] text-muted">Lot 1234, Kampung Sungai Kerau, 26600 Karak, Pahang.</div>
             </div>
-            <a href="/location" className="text-[13px] font-semibold text-gold no-underline">{t.next.viewMap}</a>
+            <a href="https://maps.app.goo.gl/6tpBYuTFR3yercit9" target="_blank" rel="noopener" className="text-[13px] font-semibold text-gold no-underline">{t.next.viewMap}</a>
           </div>
           <div className="flex items-center gap-4 rounded-xl bg-white p-5 shadow-[0_6px_18px_rgba(30,40,25,0.06)]">
             <div className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-full bg-forest">
