@@ -127,6 +127,15 @@ export default function BookingConfirmationCard() {
               <div className="text-sm font-semibold text-ink">{t.next.whatsappTitle}</div>
               <div className="text-[13px] text-muted">{t.next.whatsappDesc}</div>
             </div>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener"
+              className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white no-underline hover:text-white"
+              aria-label="Chat with us on WhatsApp"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"></path></svg>
+            </a>
           </div>
           <div className="flex items-center gap-4 rounded-xl bg-white p-5 shadow-[0_6px_18px_rgba(30,40,25,0.06)]">
             <div className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-full bg-forest">

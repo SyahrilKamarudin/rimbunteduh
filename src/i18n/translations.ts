@@ -132,7 +132,7 @@ export const translations = {
     },
     bookingConfirmation: {
       confirmed: { title: 'Booking Confirmed!', subtitle: 'Terima kasih, {name}. Your stay at Rimbun Teduh Homestead Farm is confirmed.' },
-      summary: { checkIn: 'Check-in', checkOut: 'Check-out', guests: 'Guests', addons: 'Add-ons', totalPaid: 'Total Paid' },
+      summary: { checkIn: 'Check-in', checkOut: 'Check-out', guests: 'Guests', addons: 'Add-ons', totalPaid: 'Total Amount Due' },
       next: {
         heading: "What's Next", viewMap: 'View Map', backHome: 'Back to Home',
         whatsappTitle: 'WhatsApp Confirmation', whatsappDesc: "We'll send your booking details & check-in guide via WhatsApp shortly.",
@@ -286,7 +286,7 @@ export const translations = {
     },
     bookingConfirmation: {
       confirmed: { title: 'Tempahan Disahkan!', subtitle: 'Terima kasih, {name}. Penginapan anda di Rimbun Teduh Homestead Farm telah disahkan.' },
-      summary: { checkIn: 'Daftar Masuk', checkOut: 'Daftar Keluar', guests: 'Tetamu', addons: 'Tambahan', totalPaid: 'Jumlah Dibayar' },
+      summary: { checkIn: 'Daftar Masuk', checkOut: 'Daftar Keluar', guests: 'Tetamu', addons: 'Tambahan', totalPaid: 'Jumlah Perlu Dibayar' },
       next: {
         heading: 'Langkah Seterusnya', viewMap: 'Lihat Peta', backHome: 'Kembali ke Laman Utama',
         whatsappTitle: 'Pengesahan WhatsApp', whatsappDesc: 'Kami akan hantar butiran tempahan & panduan daftar masuk melalui WhatsApp sebentar lagi.',
