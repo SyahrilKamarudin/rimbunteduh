@@ -135,7 +135,7 @@ export const translations = {
       summary: { checkIn: 'Check-in', checkOut: 'Check-out', guests: 'Guests', addons: 'Add-ons', totalPaid: 'Total Amount Due' },
       next: {
         heading: "What's Next", viewMap: 'View Map', backHome: 'Back to Home',
-        whatsappTitle: 'WhatsApp Confirmation', whatsappDesc: "We'll send your booking details & check-in guide via WhatsApp shortly.",
+        whatsappTitle: 'Notify Us via WhatsApp', whatsappDesc: 'Tap to send your booking details to our team so we can confirm your stay and share the check-in guide.',
         directionsTitle: 'Get Directions',
         contactTitle: 'Contact Us', contactDesc: 'Questions? Call +60 12-345 6789 or email hello@rimbunteduh.com.',
       },
@@ -289,7 +289,7 @@ export const translations = {
       summary: { checkIn: 'Daftar Masuk', checkOut: 'Daftar Keluar', guests: 'Tetamu', addons: 'Tambahan', totalPaid: 'Jumlah Perlu Dibayar' },
       next: {
         heading: 'Langkah Seterusnya', viewMap: 'Lihat Peta', backHome: 'Kembali ke Laman Utama',
-        whatsappTitle: 'Pengesahan WhatsApp', whatsappDesc: 'Kami akan hantar butiran tempahan & panduan daftar masuk melalui WhatsApp sebentar lagi.',
+        whatsappTitle: 'Maklumkan Kami melalui WhatsApp', whatsappDesc: 'Tekan untuk hantar butiran tempahan anda kepada kami supaya kami dapat sahkan penginapan anda dan kongsi panduan daftar masuk.',
         directionsTitle: 'Dapatkan Arah',
         contactTitle: 'Hubungi Kami', contactDesc: 'Ada soalan? Hubungi +60 12-345 6789 atau emel hello@rimbunteduh.com.',
       },
