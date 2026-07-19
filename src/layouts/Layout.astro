@@ -1,0 +1,25 @@
+---
+import '../styles/global.css';
+import { translations } from '../i18n/translations';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'Rimbun Teduh Homestead Farm — a nature farmstay in Sungai Kerau, Karak, Pahang. Rest, reconnect, renew.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script type="application/json" id="i18n-data" set:html={JSON.stringify(translations)} />
+  </head>
+  <body class="min-h-screen bg-cream">
+    <slot />
+    <script src="/i18n.js" defer></script>
+  </body>
+</html>

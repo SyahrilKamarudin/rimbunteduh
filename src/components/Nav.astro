@@ -1,0 +1,53 @@
+---
+import ImageSlot from './ImageSlot.astro';
+
+interface Props {
+  active?: 'home' | 'about' | 'experiences' | 'gallery' | 'location' | '';
+}
+const { active = '' } = Astro.props;
+
+const links = [
+  { key: 'home', href: '/', i18n: 'nav.home' },
+  { key: 'about', href: '/about', i18n: 'nav.about' },
+  { key: 'experiences', href: '/experiences', i18n: 'nav.experiences' },
+  { key: 'gallery', href: '/gallery', i18n: 'nav.gallery' },
+  { key: 'location', href: '/location', i18n: 'nav.location' },
+];
+---
+<nav class="sticky top-0 z-50 flex items-center justify-between gap-5 border-b border-forest/[0.12] bg-cream px-6 py-4 md:px-12">
+  <a href="/" class="flex flex-shrink-0 items-center gap-3 no-underline">
+    <ImageSlot placeholder="Logo" rounded="full" class="h-11 w-11 flex-shrink-0" />
+    <div class="flex flex-col leading-tight whitespace-nowrap">
+      <span class="font-serif text-[17px] font-semibold tracking-[0.3px] text-forest">RIMBUN TEDUH</span>
+      <span class="text-[9px] tracking-[1.5px] text-muted-2">HOMESTEAD FARM</span>
+    </div>
+  </a>
+
+  <div class="hidden flex-shrink-0 items-center gap-6 lg:flex">
+    {links.map((link) => (
+      <a
+        href={link.href}
+        data-i18n={link.i18n}
+        class={
+          active === link.key
+            ? 'border-b-2 border-gold pb-1 text-[15px] font-semibold text-forest no-underline'
+            : 'text-[15px] text-[#3d4a37] no-underline'
+        }
+      >
+        {link.key === 'home' ? 'Home' : link.key === 'about' ? 'About' : link.key === 'experiences' ? 'Experiences' : link.key === 'gallery' ? 'Gallery' : 'Location'}
+      </a>
+    ))}
+  </div>
+
+  <div class="flex flex-shrink-0 items-center gap-3.5">
+    <div class="flex overflow-hidden rounded-full border-[1.5px] border-forest/20">
+      <button data-lang-btn="en" class="px-3.5 py-1.5 text-xs font-bold text-white bg-forest" type="button">EN</button>
+      <button data-lang-btn="ms" class="px-3.5 py-1.5 text-xs font-semibold text-[#3d4a37]" type="button">BM</button>
+    </div>
+    <a
+      href="/booking"
+      data-i18n="nav.bookNow"
+      class="flex items-center gap-2 rounded-lg bg-gold px-5 py-3 text-sm font-semibold text-white no-underline hover:bg-gold-dark hover:text-white"
+    >Book Now</a>
+  </div>
+</nav>

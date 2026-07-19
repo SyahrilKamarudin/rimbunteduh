@@ -1,0 +1,313 @@
+export const translations = {
+  en: {
+    nav: {
+      home: 'Home', about: 'About', experiences: 'Experiences', gallery: 'Gallery',
+      location: 'Location', bookNow: 'Book Now', bookStay: 'Book Your Stay',
+    },
+    footer: {
+      blurb: 'A nature farmstay in Karak, Pahang. Rest, reconnect, and renew in harmony with nature.',
+      quickLinks: 'QUICK LINKS', contact: 'CONTACT US', visit: 'VISIT US',
+      copyright: '© 2026 Rimbun Teduh Homestead Farm. All rights reserved.',
+      privacy: 'Privacy Policy', terms: 'Terms & Conditions',
+      address: 'Lot 1234, Kampung Sungai Kerau, 26600 Karak, Pahang, Malaysia',
+      phone: '+60 12-345 6789', email: 'hello@rimbunteduh.com', web: 'www.rimbunteduh.com',
+    },
+    home: {
+      hero: {
+        title1: 'Alam', title2: 'Menyambutmu', subtitle: 'Nature Welcomes You',
+        bookStay: 'Book Your Stay', exploreExp: 'Explore Experiences',
+        checkIn: 'CHECK-IN', checkOut: 'CHECK-OUT', guests: 'GUESTS', checkAvail: 'Check Availability',
+      },
+      phil: {
+        restTitle: 'Rest', restDesc: 'Slow down and rest in the embrace of nature.',
+        reconnectTitle: 'Reconnect', reconnectDesc: 'Reconnect with loved ones, nature, and what truly matters.',
+        renewTitle: 'Renew', renewDesc: 'Renew your mind, body and spirit.',
+      },
+      exp: {
+        eyebrow: 'EXPERIENCES', heading: 'Simple Moments, Lasting Memories',
+        c1title: 'Mindful Fishing', c1desc: "Cast a line, clear your mind, and enjoy the river's calm.",
+        c2title: 'Natural Farming Workshop', c2desc: 'Learn, get your hands dirty, and grow the earth.',
+        c3title: 'Nature Wellness', c3desc: 'Breathe deep, move gently, and restore your balance.',
+        c4title: 'Food Foraging', c4desc: "Explore, forage, and discover nature's hidden treats.",
+        c5title: 'Cabin Stay', c5desc: 'Cozy wooden cabins surrounded by lush greenery.',
+        c6title: 'BBQ & Gatherings', c6desc: 'Gather, grill, and create warm memories.',
+      },
+      testimonial: {
+        quote: '"A perfect escape from the city. The sound of the river, the fresh air, the warm hospitality — everything we needed to slow down and reconnect as a family."',
+        name: 'Ahmad Hafiz & Family', location: 'Kuala Lumpur',
+      },
+      gallery: { eyebrow: 'GALLERY', heading: 'A Glimpse of Our Homestead', viewFull: 'View Full Gallery' },
+      location: {
+        eyebrow: 'OUR LOCATION', heading: 'Discover Sungai Kerau, Karak',
+        body: 'Tucked away in the lush greenery of Karak, Pahang — where rivers flow, birds sing, and time slows down.',
+        directions: 'Get Directions',
+      },
+    },
+    about: {
+      hero: { title: 'Our Story', subtitle: 'Rooted in nature. Guided by purpose. Welcoming you home.' },
+      quote: {
+        headline: 'In a world that never stops moving, Rimbun Teduh invites you to slow down.',
+        body: 'Tucked away in the lush greenery of Karak, Pahang, our farmstay is a place to breathe, reflect, and reconnect — with nature, with loved ones, and with yourself.',
+      },
+      phil: {
+        eyebrow: 'OUR PHILOSOPHY', heading: 'Rest. Reconnect. Renew.',
+        restTitle: 'Rest', restDesc: "We offer a peaceful space for you to slow down and rest deeply. Surrounded by nature, you'll find the calm your body and mind have been craving.",
+        reconnectTitle: 'Reconnect', reconnectDesc: 'Reconnect with the people who matter, reconnect with the earth, and most importantly, reconnect with yourself through meaningful moments.',
+        renewTitle: 'Renew', renewDesc: 'Leave feeling renewed — your mind clearer, your heart lighter, and your spirit uplifted by the simple joys of farm living.',
+      },
+      senses: {
+        eyebrow: 'THE FIVE SENSES JOURNEY', heading: 'Experience with All Your Senses',
+        seeTitle: 'See', seeDesc: 'Lush green landscapes, flowing rivers, and starry night skies.',
+        hearTitle: 'Hear', hearDesc: 'Birds singing, leaves rustling, and the gentle flow of the river.',
+        smellTitle: 'Smell', smellDesc: 'Fresh earth, blooming herbs, and the scent of home-cooked meals.',
+        tasteTitle: 'Taste', tasteDesc: 'Farm-fresh ingredients, local flavours, and food made with love.',
+        feelTitle: 'Feel', feelDesc: 'The sun on your skin, cool river water, and the warmth of hospitality.',
+      },
+      promise: {
+        headline: 'Leave with muddy feet, a calm quiet mind, and a grateful heart.',
+        body: 'At Rimbun Teduh, we promise more than just a stay — we promise a return to what truly matters. A place where memories are made and stories are gathered.',
+      },
+      moments: { eyebrow: 'LIFE AT RIMBUN TEDUH', heading: 'Moments From Our Farm' },
+    },
+    experiences: {
+      hero: { title: 'Experiences', subtitle: 'Slow living, told through six simple rituals' },
+      enquire: 'Enquire via WhatsApp',
+      c1: { title: 'Mindful Fishing', desc: "Cast a line by the river, sit in silence, and let the current carry your thoughts away.", duration: '2 hours', price: 'From RM 40' },
+      c2: { title: 'Natural Farming Workshop', desc: 'Learn organic growing methods, get your hands in the soil, and plant something of your own.', duration: '1.5 hours', price: 'From RM 60' },
+      c3: { title: 'Nature Wellness', desc: 'Guided breathwork and gentle movement sessions set against birdsong and river sounds.', duration: '1 hour', price: 'From RM 50' },
+      c4: { title: 'Food Foraging', desc: 'Walk the farm trails with our guides and discover edible plants, herbs, and wild fruit.', duration: '1.5 hours', price: 'From RM 45' },
+      c5: { title: 'Pop-Up Café', desc: 'Farm-fresh coffee, kuih, and light bites served on the riverside deck.', duration: 'Open daily', price: 'From RM 15' },
+      c6: { title: 'BBQ & Gatherings', desc: 'Gather around the fire with family and friends for a warm evening cookout.', duration: 'Evenings', price: 'From RM 80' },
+      cta: { heading: 'Ready to slow down?', body: 'Book your stay and experience Rimbun Teduh for yourself.', button: 'Book Your Stay' },
+    },
+    location: {
+      hero: { title: 'Discover the Heart of Sungai Kerau, Karak' },
+      attractions: {
+        eyebrow: 'NEARBY ATTRACTIONS', heading: 'Things to See & Do Around Us', seasonal: 'SEASONAL',
+        a1title: 'Kuala Gandah Elephant Centre', a1desc: "Meet and learn about Malaysia's National Elephant Conservation Centre, 30 minutes away.",
+        a2title: 'Waterfalls & Rivers', a2desc: 'Cool cascades and clear river pools tucked in the surrounding jungle, perfect for a dip.',
+        a3title: 'Vanilla Farm', a3desc: 'Tour a working vanilla plantation and learn how the prized pods are grown and cured.',
+        a4title: 'Seasonal Durian', a4desc: 'Feast on fresh Musang King and Kampung durian straight from local orchards, in season.',
+      },
+      patin: {
+        eyebrow: 'LOCAL FLAVOUR', heading: 'Fresh River Patin Cuisine',
+        body: 'Sungai Kerau is known for its river patin — a local delicacy served in tempoyak curry, grilled with sambal, or fried crisp. Ask our team about nearby patin restaurants during your stay.',
+        button: 'Book Your Stay',
+      },
+    },
+    gallery: {
+      gallery: { eyebrow: 'GALLERY', heading: 'A Glimpse of Our Homestead' },
+      categories: { All: 'All', Farm: 'Farm', Stay: 'Stay', Activities: 'Activities', Food: 'Food' },
+    },
+    booking: {
+      stepLabels: ['Dates & Guests', 'Add-ons', 'Your Details', 'Confirm'],
+      back: 'Back', next: 'Next', confirmBooking: 'Confirm Booking', selectDate: 'Select date',
+      step1: {
+        title: '1. Dates & Guests', subtitle: 'Select your stay dates and number of guests.',
+        checkIn: 'CHECK-IN', checkOut: 'CHECK-OUT', selected: 'Selected', inRange: 'In Range',
+        adults: 'Adults', children: 'Children (4–12 yrs)', maxNote: 'Max 6 guests per cabin (children under 4 stay free)',
+      },
+      step2: {
+        title: '2. Add-ons', subtitle: 'Enhance your stay with optional extras.',
+        bbqTitle: 'BBQ Set & Charcoal', bbqDesc: 'Includes grill, charcoal, utensils & setup', bbqPrice: 'RM 80 per stay',
+        foragingTitle: 'Food Foraging Session', foragingDesc: 'Guided 1.5-hour forest walk with our team', foragingPrice: 'RM 45 per person',
+        breakfastTitle: 'Farm Breakfast', breakfastDesc: 'Fresh farm-to-table breakfast each morning', breakfastPrice: 'RM 25 per person',
+      },
+      step3: {
+        title: '3. Your Details', subtitle: "Tell us who's coming so we can prepare your stay.",
+        fullName: 'Full Name', phoneNumber: 'Phone Number', email: 'Email',
+        requestsLabel: 'Special Requests (optional)', requestsPlaceholder: 'Anything we should know before you arrive?',
+      },
+      step4: {
+        title: '4. Confirm', subtitle: 'Review your booking before confirming.',
+        guestName: 'Guest Name', phone: 'Phone', email: 'Email', dates: 'Dates', guests: 'Guests',
+      },
+      sidebar: {
+        bedrooms: '2 Bedrooms', upTo: 'Up to 6 guests', riverside: 'Riverside View',
+        staySummary: 'STAY SUMMARY', checkIn: 'Check-in', checkOut: 'Check-out', nights: 'Nights', guests: 'Guests',
+        cabinRate: 'Cabin Rate', nightsWord: 'nights', total: 'Total (MYR)',
+        needHelp: 'Need Help?', helpDesc: 'Chat with us or call +60 12-345 6789',
+      },
+      footer: { needHelp: 'Need help with your booking?', whatsappUs: 'WhatsApp us', secure: 'Secure booking · Your data is protected' },
+    },
+    bookingConfirmation: {
+      confirmed: { title: 'Booking Confirmed!', subtitle: 'Terima kasih, {name}. Your stay at Rimbun Teduh Homestead Farm is confirmed.' },
+      summary: { checkIn: 'Check-in', checkOut: 'Check-out', guests: 'Guests', addons: 'Add-ons', totalPaid: 'Total Paid' },
+      next: {
+        heading: "What's Next", viewMap: 'View Map', backHome: 'Back to Home',
+        whatsappTitle: 'WhatsApp Confirmation', whatsappDesc: "We'll send your booking details & check-in guide via WhatsApp shortly.",
+        directionsTitle: 'Get Directions',
+        contactTitle: 'Contact Us', contactDesc: 'Questions? Call +60 12-345 6789 or email hello@rimbunteduh.com.',
+      },
+    },
+    admin: {
+      brand: 'ADMIN PANEL', dashboard: 'Dashboard', bookings: 'Bookings', enquiries: 'Enquiries',
+      availability: 'Availability', settings: 'Settings', backToSite: 'Back to Site',
+      title: 'Bookings', subtitle: 'Manage cabin stay reservations and requests.',
+      totalBookings: 'Total Bookings', pendingReview: 'Pending Review', upcomingStays: 'Upcoming Stays', revenue: 'Revenue (MYR)',
+      searchPlaceholder: 'Search guest name...',
+      colGuest: 'GUEST', colDates: 'DATES', colGuests: 'GUESTS', colAddons: 'ADD-ONS', colTotal: 'TOTAL', colStatus: 'STATUS',
+      bookingDetails: 'Booking Details', reference: 'Reference', guestName: 'Guest Name', phone: 'Phone',
+      dates: 'Dates', guests: 'Guests', addons: 'Add-ons', total: 'Total',
+      confirmBooking: 'Confirm Booking', cancelBooking: 'Cancel Booking',
+      login: 'Admin Login', password: 'Password', loginButton: 'Log In', loginError: 'Incorrect password.',
+    },
+  },
+  ms: {
+    nav: {
+      home: 'Laman Utama', about: 'Tentang Kami', experiences: 'Pengalaman', gallery: 'Galeri',
+      location: 'Lokasi', bookNow: 'Tempah Sekarang', bookStay: 'Tempah Penginapan',
+    },
+    footer: {
+      blurb: 'Farmstay alam semula jadi di Karak, Pahang. Berehat, berhubung semula, dan pulih bersama alam.',
+      quickLinks: 'PAUTAN PANTAS', contact: 'HUBUNGI KAMI', visit: 'LAWATI KAMI',
+      copyright: '© 2026 Rimbun Teduh Homestead Farm. Hak cipta terpelihara.',
+      privacy: 'Dasar Privasi', terms: 'Terma & Syarat',
+      address: 'Lot 1234, Kampung Sungai Kerau, 26600 Karak, Pahang, Malaysia',
+      phone: '+60 12-345 6789', email: 'hello@rimbunteduh.com', web: 'www.rimbunteduh.com',
+    },
+    home: {
+      hero: {
+        title1: 'Alam', title2: 'Menyambutmu', subtitle: 'Nature Welcomes You',
+        bookStay: 'Tempah Penginapan', exploreExp: 'Terokai Pengalaman',
+        checkIn: 'DAFTAR MASUK', checkOut: 'DAFTAR KELUAR', guests: 'TETAMU', checkAvail: 'Semak Ketersediaan',
+      },
+      phil: {
+        restTitle: 'Berehat', restDesc: 'Perlahankan langkah dan berehat dalam pelukan alam semula jadi.',
+        reconnectTitle: 'Berhubung Semula', reconnectDesc: 'Berhubung semula dengan orang tersayang, alam, dan perkara yang benar-benar penting.',
+        renewTitle: 'Pulih', renewDesc: 'Pulihkan minda, tubuh dan jiwa anda.',
+      },
+      exp: {
+        eyebrow: 'PENGALAMAN', heading: 'Detik Ringkas, Kenangan Berpanjangan',
+        c1title: 'Memancing Penuh Ketenangan', c1desc: 'Lontar joran, kosongkan minda, dan nikmati ketenangan sungai.',
+        c2title: 'Bengkel Pertanian Semula Jadi', c2desc: 'Belajar, kotorkan tangan, dan tanam sesuatu dari bumi.',
+        c3title: 'Kesejahteraan Alam', c3desc: 'Tarik nafas dalam, gerak perlahan, dan pulihkan keseimbangan diri.',
+        c4title: 'Mencari Hasil Hutan', c4desc: 'Terokai dan temui khazanah tersembunyi alam semula jadi.',
+        c5title: 'Penginapan Pondok', c5desc: 'Pondok kayu yang selesa dikelilingi kehijauan yang rimbun.',
+        c6title: 'BBQ & Perhimpunan', c6desc: 'Berkumpul, bakar, dan cipta kenangan yang hangat.',
+      },
+      testimonial: {
+        quote: '"Percutian yang sempurna dari bandar. Bunyi sungai, udara segar, layanan mesra — semua yang kami perlukan untuk berehat dan berhubung semula sebagai keluarga."',
+        name: 'Ahmad Hafiz & Keluarga', location: 'Kuala Lumpur',
+      },
+      gallery: { eyebrow: 'GALERI', heading: 'Sekilas Homestead Kami', viewFull: 'Lihat Galeri Penuh' },
+      location: {
+        eyebrow: 'LOKASI KAMI', heading: 'Terokai Sungai Kerau, Karak',
+        body: 'Tersembunyi dalam kehijauan Karak, Pahang — tempat sungai mengalir, burung berkicau, dan masa berjalan perlahan.',
+        directions: 'Dapatkan Arah',
+      },
+    },
+    about: {
+      hero: { title: 'Kisah Kami', subtitle: 'Berakar umbi dalam alam. Dipandu oleh tujuan. Menyambut anda pulang.' },
+      quote: {
+        headline: 'Dalam dunia yang tidak pernah berhenti bergerak, Rimbun Teduh menjemput anda untuk berhenti sejenak.',
+        body: 'Tersembunyi dalam kehijauan Karak, Pahang, farmstay kami adalah tempat untuk bernafas, merenung, dan berhubung semula — dengan alam, orang tersayang, dan diri sendiri.',
+      },
+      phil: {
+        eyebrow: 'FALSAFAH KAMI', heading: 'Berehat. Berhubung Semula. Pulih.',
+        restTitle: 'Berehat', restDesc: 'Kami menawarkan ruang yang tenang untuk anda berehat dengan mendalam. Dikelilingi alam, anda akan temui ketenangan yang dicari-cari.',
+        reconnectTitle: 'Berhubung Semula', reconnectDesc: 'Berhubung semula dengan orang yang disayangi, dengan bumi, dan yang paling penting, dengan diri sendiri melalui detik yang bermakna.',
+        renewTitle: 'Pulih', renewDesc: 'Pulang dengan minda yang lebih jernih, hati yang lebih ringan, dan jiwa yang disegarkan oleh keindahan hidup berkampung.',
+      },
+      senses: {
+        eyebrow: 'PERJALANAN LIMA DERIA', heading: 'Alami Dengan Semua Deria Anda',
+        seeTitle: 'Lihat', seeDesc: 'Landskap hijau rimbun, sungai yang mengalir, dan langit malam berbintang.',
+        hearTitle: 'Dengar', hearDesc: 'Kicauan burung, daun berdesir, dan aliran lembut sungai.',
+        smellTitle: 'Hidu', smellDesc: 'Bau tanah segar, bunga-bungaan, dan aroma masakan rumah.',
+        tasteTitle: 'Rasa', tasteDesc: 'Bahan segar dari ladang, rasa tempatan, dan makanan dimasak penuh kasih.',
+        feelTitle: 'Rasa Sentuhan', feelDesc: 'Cahaya matahari di kulit, air sungai yang sejuk, dan kehangatan layanan.',
+      },
+      promise: {
+        headline: 'Pulang dengan kaki berlumpur, minda yang tenang, dan hati yang bersyukur.',
+        body: 'Di Rimbun Teduh, kami menjanjikan lebih daripada sekadar penginapan — kami menjanjikan kepulangan kepada perkara yang benar-benar penting. Tempat kenangan dicipta dan cerita dikumpulkan.',
+      },
+      moments: { eyebrow: 'KEHIDUPAN DI RIMBUN TEDUH', heading: 'Detik Dari Ladang Kami' },
+    },
+    experiences: {
+      hero: { title: 'Pengalaman', subtitle: 'Kehidupan santai, melalui enam ritual ringkas' },
+      enquire: 'Tanya Melalui WhatsApp',
+      c1: { title: 'Memancing Penuh Ketenangan', desc: 'Lontar joran di tepi sungai, duduk dalam senyap, dan biarkan arus membawa fikiran anda pergi.', duration: '2 jam', price: 'Dari RM 40' },
+      c2: { title: 'Bengkel Pertanian Semula Jadi', desc: 'Belajar teknik penanaman organik, kotorkan tangan, dan tanam sesuatu milik anda sendiri.', duration: '1.5 jam', price: 'Dari RM 60' },
+      c3: { title: 'Kesejahteraan Alam', desc: 'Sesi pernafasan berpandu dan gerakan lembut diiringi kicauan burung dan bunyi sungai.', duration: '1 jam', price: 'Dari RM 50' },
+      c4: { title: 'Mencari Hasil Hutan', desc: 'Susuri denai ladang bersama pemandu kami dan temui tumbuhan, herba, dan buahan liar.', duration: '1.5 jam', price: 'Dari RM 45' },
+      c5: { title: 'Pop-Up Café', desc: 'Kopi segar ladang, kuih, dan juadah ringan dihidangkan di dek tepi sungai.', duration: 'Buka setiap hari', price: 'Dari RM 15' },
+      c6: { title: 'BBQ & Perhimpunan', desc: 'Berkumpul di tepi api bersama keluarga dan sahabat untuk malam bakaran yang hangat.', duration: 'Waktu malam', price: 'Dari RM 80' },
+      cta: { heading: 'Bersedia untuk berehat?', body: 'Tempah penginapan anda dan alami sendiri Rimbun Teduh.', button: 'Tempah Penginapan' },
+    },
+    location: {
+      hero: { title: 'Terokai Jantung Sungai Kerau, Karak' },
+      attractions: {
+        eyebrow: 'TARIKAN BERHAMPIRAN', heading: 'Perkara Menarik di Sekitar Kami', seasonal: 'BERMUSIM',
+        a1title: 'Pusat Gajah Kuala Gandah', a1desc: 'Kenali Pusat Pemuliharaan Gajah Kebangsaan Malaysia, hanya 30 minit dari sini.',
+        a2title: 'Air Terjun & Sungai', a2desc: 'Lata yang sejuk dan lubuk sungai jernih tersembunyi di hutan sekitar, sesuai untuk mandi-manda.',
+        a3title: 'Ladang Vanila', a3desc: 'Lawati ladang vanila yang beroperasi dan ketahui cara pod berharga ini ditanam dan diproses.',
+        a4title: 'Durian Bermusim', a4desc: 'Nikmati Musang King dan durian kampung segar terus dari dusun tempatan, mengikut musim.',
+      },
+      patin: {
+        eyebrow: 'RASA TEMPATAN', heading: 'Masakan Patin Sungai yang Segar',
+        body: 'Sungai Kerau terkenal dengan ikan patinnya — juadah tempatan yang dihidang dalam kari tempoyak, dibakar sambal, atau digoreng garing. Tanya kakitangan kami tentang restoran patin berdekatan semasa penginapan anda.',
+        button: 'Tempah Penginapan',
+      },
+    },
+    gallery: {
+      gallery: { eyebrow: 'GALERI', heading: 'Sekilas Homestead Kami' },
+      categories: { All: 'Semua', Farm: 'Ladang', Stay: 'Penginapan', Activities: 'Aktiviti', Food: 'Makanan' },
+    },
+    booking: {
+      stepLabels: ['Tarikh & Tetamu', 'Tambahan', 'Butiran Anda', 'Sahkan'],
+      back: 'Kembali', next: 'Seterusnya', confirmBooking: 'Sahkan Tempahan', selectDate: 'Pilih tarikh',
+      step1: {
+        title: '1. Tarikh & Tetamu', subtitle: 'Pilih tarikh penginapan dan bilangan tetamu anda.',
+        checkIn: 'DAFTAR MASUK', checkOut: 'DAFTAR KELUAR', selected: 'Dipilih', inRange: 'Dalam Julat',
+        adults: 'Dewasa', children: 'Kanak-kanak (4–12 tahun)', maxNote: 'Maksimum 6 tetamu setiap pondok (kanak-kanak bawah 4 tahun percuma)',
+      },
+      step2: {
+        title: '2. Tambahan', subtitle: 'Tingkatkan penginapan anda dengan tambahan pilihan.',
+        bbqTitle: 'Set BBQ & Arang', bbqDesc: 'Termasuk gril, arang, peralatan & persediaan', bbqPrice: 'RM 80 setiap penginapan',
+        foragingTitle: 'Sesi Mencari Hasil Hutan', foragingDesc: 'Jalan hutan berpandu 1.5 jam bersama pasukan kami', foragingPrice: 'RM 45 seorang',
+        breakfastTitle: 'Sarapan Ladang', breakfastDesc: 'Sarapan segar dari ladang setiap pagi', breakfastPrice: 'RM 25 seorang',
+      },
+      step3: {
+        title: '3. Butiran Anda', subtitle: 'Beritahu kami siapa yang datang supaya kami boleh sediakan penginapan anda.',
+        fullName: 'Nama Penuh', phoneNumber: 'Nombor Telefon', email: 'Emel',
+        requestsLabel: 'Permintaan Khas (pilihan)', requestsPlaceholder: 'Apa-apa yang perlu kami tahu sebelum anda tiba?',
+      },
+      step4: {
+        title: '4. Sahkan', subtitle: 'Semak tempahan anda sebelum mengesahkan.',
+        guestName: 'Nama Tetamu', phone: 'Telefon', email: 'Emel', dates: 'Tarikh', guests: 'Tetamu',
+      },
+      sidebar: {
+        bedrooms: '2 Bilik Tidur', upTo: 'Sehingga 6 tetamu', riverside: 'Pemandangan Sungai',
+        staySummary: 'RINGKASAN PENGINAPAN', checkIn: 'Daftar Masuk', checkOut: 'Daftar Keluar', nights: 'Malam', guests: 'Tetamu',
+        cabinRate: 'Kadar Pondok', nightsWord: 'malam', total: 'Jumlah (MYR)',
+        needHelp: 'Perlukan Bantuan?', helpDesc: 'Berbual dengan kami atau hubungi +60 12-345 6789',
+      },
+      footer: { needHelp: 'Perlukan bantuan dengan tempahan anda?', whatsappUs: 'WhatsApp kami', secure: 'Tempahan selamat · Data anda dilindungi' },
+    },
+    bookingConfirmation: {
+      confirmed: { title: 'Tempahan Disahkan!', subtitle: 'Terima kasih, {name}. Penginapan anda di Rimbun Teduh Homestead Farm telah disahkan.' },
+      summary: { checkIn: 'Daftar Masuk', checkOut: 'Daftar Keluar', guests: 'Tetamu', addons: 'Tambahan', totalPaid: 'Jumlah Dibayar' },
+      next: {
+        heading: 'Langkah Seterusnya', viewMap: 'Lihat Peta', backHome: 'Kembali ke Laman Utama',
+        whatsappTitle: 'Pengesahan WhatsApp', whatsappDesc: 'Kami akan hantar butiran tempahan & panduan daftar masuk melalui WhatsApp sebentar lagi.',
+        directionsTitle: 'Dapatkan Arah',
+        contactTitle: 'Hubungi Kami', contactDesc: 'Ada soalan? Hubungi +60 12-345 6789 atau emel hello@rimbunteduh.com.',
+      },
+    },
+    admin: {
+      brand: 'PANEL ADMIN', dashboard: 'Papan Pemuka', bookings: 'Tempahan', enquiries: 'Pertanyaan',
+      availability: 'Ketersediaan', settings: 'Tetapan', backToSite: 'Kembali ke Laman',
+      title: 'Tempahan', subtitle: 'Urus tempahan pondok dan permintaan.',
+      totalBookings: 'Jumlah Tempahan', pendingReview: 'Menunggu Semakan', upcomingStays: 'Penginapan Akan Datang', revenue: 'Hasil (MYR)',
+      searchPlaceholder: 'Cari nama tetamu...',
+      colGuest: 'TETAMU', colDates: 'TARIKH', colGuests: 'TETAMU', colAddons: 'TAMBAHAN', colTotal: 'JUMLAH', colStatus: 'STATUS',
+      bookingDetails: 'Butiran Tempahan', reference: 'Rujukan', guestName: 'Nama Tetamu', phone: 'Telefon',
+      dates: 'Tarikh', guests: 'Tetamu', addons: 'Tambahan', total: 'Jumlah',
+      confirmBooking: 'Sahkan Tempahan', cancelBooking: 'Batal Tempahan',
+      login: 'Log Masuk Admin', password: 'Kata Laluan', loginButton: 'Log Masuk', loginError: 'Kata laluan salah.',
+    },
+  },
+} as const;
+
+export type Lang = keyof typeof translations;
+export type Translations = typeof translations.en;

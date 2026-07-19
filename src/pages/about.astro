@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+---
+<Layout title="Our Story | Rimbun Teduh Homestead Farm" description="Rooted in nature. Guided by purpose. Welcoming you home.">
+  <Nav active="about" />
+
+  <div class="relative h-[300px] w-full md:h-[420px]">
+    <ImageSlot placeholder="Misty forest valley, cabin at sunrise" class="absolute inset-0 h-full w-full" rounded="none" />
+    <div class="absolute inset-0 bg-gradient-to-r from-[rgba(20,30,20,0.55)] via-[rgba(20,30,20,0.15)] to-[rgba(20,30,20,0.05)] pointer-events-none"></div>
+    <div class="absolute inset-0 flex items-center px-6 md:px-16">
+      <div class="max-w-[520px] rounded-2xl bg-[rgba(15,22,15,0.32)] p-6 backdrop-blur-[2px] md:p-7">
+        <div data-i18n="about.hero.title" class="font-serif text-3xl font-medium text-white md:text-[48px]">Our Story</div>
+        <div data-i18n="about.hero.subtitle" class="mt-3 text-base leading-[1.6] text-footer-heading">Rooted in nature. Guided by purpose. Welcoming you home.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative z-10 mx-auto -mt-8 max-w-content px-6 md:-mt-12 md:px-16">
+    <div class="grid grid-cols-1 overflow-hidden rounded-card-lg bg-white shadow-elevated md:grid-cols-2">
+      <div class="p-8 md:p-12">
+        <div class="font-serif text-4xl leading-[0.5] text-gold">&#8220;</div>
+        <div data-i18n="about.quote.headline" class="my-4 font-serif text-xl leading-[1.4] text-ink md:text-[26px]">
+          In a world that never stops moving, Rimbun Teduh invites you to slow down.
+        </div>
+        <div data-i18n="about.quote.body" class="text-sm leading-[1.7] text-muted">
+          Tucked away in the lush greenery of Karak, Pahang, our farmstay is a place to breathe, reflect, and reconnect — with nature, with loved ones, and with yourself.
+        </div>
+      </div>
+      <ImageSlot placeholder="Barefoot walk on stone path through garden" class="h-[240px] w-full md:h-full" rounded="none" />
+    </div>
+  </div>
+
+  <section class="mx-auto my-24 max-w-content px-6 text-center md:px-16">
+    <div data-i18n="about.phil.eyebrow" class="mb-3 text-xs font-semibold tracking-[2px] text-gold">OUR PHILOSOPHY</div>
+    <div data-i18n="about.phil.heading" class="mb-14 font-serif text-3xl text-ink md:text-[38px]">Rest. Reconnect. Renew.</div>
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-0">
+      <div class="border-forest/[0.12] px-8 sm:border-r">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-4"><line x1="3" y1="7" x2="21" y2="7"></line><path d="M5 7 C5 13 8 15 12 15 C16 15 19 13 19 7"></path><line x1="5" y1="7" x2="5" y2="4"></line><line x1="19" y1="7" x2="19" y2="4"></line></svg>
+        <div data-i18n="about.phil.restTitle" class="mb-2.5 font-serif text-xl text-ink md:text-2xl">Rest</div>
+        <div data-i18n="about.phil.restDesc" class="text-sm leading-[1.7] text-muted">We offer a peaceful space for you to slow down and rest deeply. Surrounded by nature, you'll find the calm your body and mind have been craving.</div>
+      </div>
+      <div class="border-forest/[0.12] px-8 sm:border-r">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-4"><path d="M12 21 C12 14 8 12 8 7 C8 4.5 10 3 12 3 C14 3 16 4.5 16 7 C16 12 12 14 12 21 Z"></path><path d="M12 10 L12 3"></path></svg>
+        <div data-i18n="about.phil.reconnectTitle" class="mb-2.5 font-serif text-xl text-ink md:text-2xl">Reconnect</div>
+        <div data-i18n="about.phil.reconnectDesc" class="text-sm leading-[1.7] text-muted">Reconnect with the people who matter, reconnect with the earth, and most importantly, reconnect with yourself through meaningful moments.</div>
+      </div>
+      <div class="px-8">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-4"><path d="M12 16 A6 6 0 0 1 18 16"></path><line x1="12" y1="4" x2="12" y2="8"></line><line x1="4" y1="16" x2="6" y2="16"></line><line x1="18" y1="16" x2="20" y2="16"></line><line x1="6" y1="8" x2="7.5" y2="9.5"></line><line x1="18" y1="8" x2="16.5" y2="9.5"></line></svg>
+        <div data-i18n="about.phil.renewTitle" class="mb-2.5 font-serif text-xl text-ink md:text-2xl">Renew</div>
+        <div data-i18n="about.phil.renewDesc" class="text-sm leading-[1.7] text-muted">Leave feeling renewed — your mind clearer, your heart lighter, and your spirit uplifted by the simple joys of farm living.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto my-24 max-w-content px-6 text-center md:px-16">
+    <div data-i18n="about.senses.eyebrow" class="mb-3 text-xs font-semibold tracking-[2px] text-gold">THE FIVE SENSES JOURNEY</div>
+    <div data-i18n="about.senses.heading" class="mb-14 font-serif text-3xl text-ink md:text-[38px]">Experience with All Your Senses</div>
+    <div class="grid grid-cols-2 gap-8 sm:grid-cols-5 sm:gap-0">
+      <div class="border-forest/[0.12] px-5 sm:border-r">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-3.5"><path d="M2 12 C5 6 19 6 22 12 C19 18 5 18 2 12 Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        <div data-i18n="about.senses.seeTitle" class="mb-2 font-serif text-lg text-ink">See</div>
+        <div data-i18n="about.senses.seeDesc" class="text-[13px] leading-[1.6] text-muted">Lush green landscapes, flowing rivers, and starry night skies.</div>
+      </div>
+      <div class="border-forest/[0.12] px-5 sm:border-r">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-3.5"><path d="M7 12 C7 6 10 3 13 3 C17 3 19 7 18 11 C17 15 14 14 14 18 C14 20 12 21 10 20"></path></svg>
+        <div data-i18n="about.senses.hearTitle" class="mb-2 font-serif text-lg text-ink">Hear</div>
+        <div data-i18n="about.senses.hearDesc" class="text-[13px] leading-[1.6] text-muted">Birds singing, leaves rustling, and the gentle flow of the river.</div>
+      </div>
+      <div class="border-forest/[0.12] px-5 sm:border-r">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-3.5"><path d="M10 3 C8 6 8 9 10 10 C8 11 7 13 8 16 C9 19 13 20 16 18 C19 16 18 12 16 11"></path></svg>
+        <div data-i18n="about.senses.smellTitle" class="mb-2 font-serif text-lg text-ink">Smell</div>
+        <div data-i18n="about.senses.smellDesc" class="text-[13px] leading-[1.6] text-muted">Fresh earth, blooming herbs, and the scent of home-cooked meals.</div>
+      </div>
+      <div class="border-forest/[0.12] px-5 sm:border-r">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-3.5"><path d="M12 20 C12 14 6 12 6 7 C6 4.5 8 3 12 3 C16 3 18 4.5 18 7 C18 12 12 14 12 20 Z"></path></svg>
+        <div data-i18n="about.senses.tasteTitle" class="mb-2 font-serif text-lg text-ink">Taste</div>
+        <div data-i18n="about.senses.tasteDesc" class="text-[13px] leading-[1.6] text-muted">Farm-fresh ingredients, local flavours, and food made with love.</div>
+      </div>
+      <div class="px-5">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-3.5"><path d="M8 13 C6 13 5 15 6 17 L8 20 C9 21 11 21 14 21 C17 21 18 19 18 16 L18 6.5"></path></svg>
+        <div data-i18n="about.senses.feelTitle" class="mb-2 font-serif text-lg text-ink">Feel</div>
+        <div data-i18n="about.senses.feelDesc" class="text-[13px] leading-[1.6] text-muted">The sun on your skin, cool river water, and the warmth of hospitality.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto mb-24 max-w-content px-6 md:px-16">
+    <div class="relative overflow-hidden rounded-card-lg bg-forest-dark p-8 md:p-14">
+      <div class="absolute left-6 top-4 font-serif text-3xl text-gold opacity-70 md:left-8 md:text-4xl">&#8220;</div>
+      <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-[1.2fr_1fr]">
+        <div data-i18n="about.promise.headline" class="pl-0 font-serif text-2xl leading-[1.4] text-white md:pl-4 md:text-[28px]">
+          Leave with muddy feet, a calm quiet mind, and a grateful heart.
+        </div>
+        <div>
+          <div data-i18n="about.promise.body" class="mb-4 text-sm leading-[1.7] text-footer-body">
+            At Rimbun Teduh, we promise more than just a stay — we promise a return to what truly matters. A place where memories are made and stories are gathered.
+          </div>
+          <div class="font-serif text-base italic text-gold">Alam Menyambutmu.</div>
+          <div class="text-[13px] text-footer-muted">Nature Welcomes You.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto mb-24 max-w-content px-6 text-center md:px-16">
+    <div data-i18n="about.moments.eyebrow" class="mb-3 text-xs font-semibold tracking-[2px] text-gold">LIFE AT RIMBUN TEDUH</div>
+    <div data-i18n="about.moments.heading" class="mb-10 font-serif text-3xl text-ink md:text-[38px]">Moments From Our Farm</div>
+    <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-[repeat(4,1fr)_1.4fr] md:auto-rows-[1fr] md:[grid-template-rows:1fr_1fr] md:h-[420px]">
+      <ImageSlot placeholder="Harvesting greens" class="row-span-2 h-full w-full" rounded="lg" />
+      <ImageSlot placeholder="Ducks on the river deck" class="h-full w-full" rounded="lg" />
+      <ImageSlot placeholder="Communal farm meal" class="h-full w-full" rounded="lg" />
+      <ImageSlot placeholder="Treehouse in forest canopy" class="row-span-2 h-full w-full" rounded="lg" />
+      <ImageSlot placeholder="River stones and stream" class="h-full w-full" rounded="lg" />
+      <ImageSlot placeholder="Farmer tending crops" class="h-full w-full" rounded="lg" />
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+
+const WHATSAPP_NUMBER = '60123456789';
+function waLink(experience: string) {
+  const text = `Hi, I'd like to enquire about ${experience} at Rimbun Teduh.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
+const cards = [
+  { key: 'c1', placeholder: 'River fishing at dawn', title: 'Mindful Fishing', desc: "Cast a line by the river, sit in silence, and let the current carry your thoughts away.", duration: '2 hours', price: 'From RM 40', wa: waLink('Mindful Fishing') },
+  { key: 'c2', placeholder: 'Hands planting seedling in soil', title: 'Natural Farming Workshop', desc: 'Learn organic growing methods, get your hands in the soil, and plant something of your own.', duration: '1.5 hours', price: 'From RM 60', wa: waLink('the Natural Farming Workshop') },
+  { key: 'c3', placeholder: 'Yoga session by the river', title: 'Nature Wellness', desc: 'Guided breathwork and gentle movement sessions set against birdsong and river sounds.', duration: '1 hour', price: 'From RM 50', wa: waLink('Nature Wellness') },
+  { key: 'c4', placeholder: 'Foraged herbs in woven basket', title: 'Food Foraging', desc: 'Walk the farm trails with our guides and discover edible plants, herbs, and wild fruit.', duration: '1.5 hours', price: 'From RM 45', wa: waLink('Food Foraging') },
+  { key: 'c5', placeholder: 'Guests wellness stretch at dawn', title: 'Pop-Up Café', desc: 'Farm-fresh coffee, kuih, and light bites served on the riverside deck.', duration: 'Open daily', price: 'From RM 15', wa: waLink('the Pop-Up Café') },
+  { key: 'c6', placeholder: 'BBQ grill on riverside deck at night', title: 'BBQ & Gatherings', desc: 'Gather around the fire with family and friends for a warm evening cookout.', duration: 'Evenings', price: 'From RM 80', wa: waLink('BBQ & Gatherings') },
+];
+---
+<Layout title="Experiences | Rimbun Teduh Homestead Farm" description="Slow living, told through six simple rituals.">
+  <Nav active="experiences" />
+
+  <div class="relative h-[260px] w-full md:h-[340px]">
+    <ImageSlot placeholder="Guests foraging in the forest" class="absolute inset-0 h-full w-full" rounded="none" />
+    <div class="absolute inset-0 bg-[rgba(20,30,20,0.5)] pointer-events-none"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+      <div class="rounded-2xl bg-[rgba(15,22,15,0.32)] px-8 py-7 backdrop-blur-[2px]">
+        <div data-i18n="experiences.hero.title" class="font-serif text-3xl font-medium text-white md:text-[42px]">Experiences</div>
+        <div data-i18n="experiences.hero.subtitle" class="mt-2.5 font-serif text-base italic text-[#E8C878] md:text-[17px]">Slow living, told through six simple rituals</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="mx-auto my-20 max-w-content-lg px-6 md:px-16">
+    <div class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+      {cards.map((c) => (
+        <div class="overflow-hidden rounded-card-lg bg-white shadow-card">
+          <ImageSlot placeholder={c.placeholder} class="h-[200px] w-full" rounded="none" />
+          <div class="p-6">
+            <div class="mb-4 -mt-[46px] flex h-[38px] w-[38px] items-center justify-center rounded-full bg-forest shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <div data-i18n={`experiences.${c.key}.title`} class="mb-2 font-serif text-xl text-ink">{c.title}</div>
+            <div data-i18n={`experiences.${c.key}.desc`} class="mb-4 text-sm leading-[1.6] text-muted">{c.desc}</div>
+            <div class="mb-4 flex items-center justify-between text-[13px] text-muted-2">
+              <span data-i18n={`experiences.${c.key}.duration`}>{c.duration}</span>
+              <span data-i18n={`experiences.${c.key}.price`} class="font-semibold text-ink">{c.price}</span>
+            </div>
+            <a href={c.wa} target="_blank" rel="noopener" data-i18n="experiences.enquire" class="flex items-center justify-center gap-2 rounded-lg bg-forest py-3 text-sm font-semibold text-white no-underline hover:text-white">
+              Enquire via WhatsApp
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-forest-dark px-6 py-16 text-center md:px-16">
+    <div data-i18n="experiences.cta.heading" class="mb-3 font-serif text-3xl text-white md:text-[36px]">Ready to slow down?</div>
+    <div data-i18n="experiences.cta.body" class="mb-7 text-[15px] text-footer-body-2">Book your stay and experience Rimbun Teduh for yourself.</div>
+    <a href="/booking" data-i18n="experiences.cta.button" class="inline-flex items-center gap-2 rounded-lg bg-gold px-8 py-4 text-[15px] font-semibold text-white no-underline hover:text-white">Book Your Stay</a>
+  </section>
+
+  <Footer />
+</Layout>

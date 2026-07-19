@@ -1,0 +1,22 @@
+---
+interface Props {
+  placeholder: string;
+  class?: string;
+  rounded?: 'none' | 'md' | 'lg' | 'full';
+}
+const { placeholder, class: className = '', rounded = 'md' } = Astro.props;
+const roundedClass = {
+  none: '',
+  md: 'rounded-card',
+  lg: 'rounded-card-lg',
+  full: 'rounded-full',
+}[rounded];
+---
+<div
+  class={`relative flex items-end overflow-hidden bg-[#DDD6C4] ${roundedClass} ${className}`}
+  role="img"
+  aria-label={placeholder}
+>
+  <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(30,58,43,0.12),rgba(200,154,68,0.12))]"></div>
+  <span class="relative z-10 p-2 text-[10px] leading-snug text-[#5c5745]/80">{placeholder}</span>
+</div>

@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+
+const experienceCards = [
+  { id: 'exp-fishing', placeholder: 'River fishing', i18nTitle: 'home.exp.c1title', i18nDesc: 'home.exp.c1desc', title: 'Mindful Fishing', desc: "Cast a line, clear your mind, and enjoy the river's calm." },
+  { id: 'exp-farming', placeholder: 'Planting seedling', i18nTitle: 'home.exp.c2title', i18nDesc: 'home.exp.c2desc', title: 'Natural Farming Workshop', desc: 'Learn, get your hands dirty, and grow the earth.' },
+  { id: 'exp-wellness', placeholder: 'Nature yoga', i18nTitle: 'home.exp.c3title', i18nDesc: 'home.exp.c3desc', title: 'Nature Wellness', desc: 'Breathe deep, move gently, and restore your balance.' },
+  { id: 'exp-foraging', placeholder: 'Basket of herbs', i18nTitle: 'home.exp.c4title', i18nDesc: 'home.exp.c4desc', title: 'Food Foraging', desc: "Explore, forage, and discover nature's hidden treats." },
+  { id: 'exp-cabin', placeholder: 'Cabin exterior', i18nTitle: 'home.exp.c5title', i18nDesc: 'home.exp.c5desc', title: 'Cabin Stay', desc: 'Cozy wooden cabins surrounded by lush greenery.' },
+  { id: 'exp-bbq', placeholder: 'BBQ grill', i18nTitle: 'home.exp.c6title', i18nDesc: 'home.exp.c6desc', title: 'BBQ & Gatherings', desc: 'Gather, grill, and create warm memories.' },
+];
+---
+<Layout title="Rimbun Teduh Homestead Farm | Alam Menyambutmu">
+  <Nav active="home" />
+
+  <div class="relative h-[500px] w-full md:h-[640px]">
+    <ImageSlot placeholder="Hero: wooden cabin at dusk, river, forest" class="absolute inset-0 h-full w-full" rounded="none" />
+    <div class="absolute inset-0 bg-gradient-to-b from-[rgba(20,30,20,0.55)] to-[rgba(20,30,20,0.4)] pointer-events-none"></div>
+    <div class="absolute inset-0 flex flex-col justify-center px-6 md:px-16">
+      <div class="max-w-[560px] rounded-2xl bg-[rgba(15,22,15,0.32)] p-6 backdrop-blur-[2px] md:p-10">
+        <div class="font-serif text-[36px] leading-[1.1] text-white md:text-[54px]">
+          <span data-i18n="home.hero.title1">Alam</span><br />
+          <span data-i18n="home.hero.title2">Menyambutmu</span>
+        </div>
+        <div data-i18n="home.hero.subtitle" class="mt-3.5 font-serif text-lg italic text-[#E8C878] md:text-[23px]">
+          Nature Welcomes You
+        </div>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/booking" data-i18n="home.hero.bookStay" class="flex items-center gap-2 rounded-lg bg-gold px-6 py-3.5 text-sm font-semibold text-white no-underline hover:text-white">Book Your Stay</a>
+          <a href="/experiences" data-i18n="home.hero.exploreExp" class="flex items-center gap-2 rounded-lg border-[1.5px] border-white px-6 py-3.5 text-sm font-semibold text-white no-underline hover:text-white">Explore Experiences</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute -bottom-16 left-4 right-4 hidden items-center gap-6 rounded-card-lg bg-white p-6 shadow-elevated sm:flex md:-bottom-[42px] md:left-16 md:right-16 md:gap-8 md:px-8">
+      <div class="flex flex-col gap-1">
+        <span data-i18n="home.hero.checkIn" class="text-[11px] tracking-[1px] text-muted-2">CHECK-IN</span>
+        <span class="text-[15px] font-semibold text-ink">24 May 2026</span>
+      </div>
+      <div class="h-9 w-px bg-forest/[0.15]"></div>
+      <div class="flex flex-col gap-1">
+        <span data-i18n="home.hero.checkOut" class="text-[11px] tracking-[1px] text-muted-2">CHECK-OUT</span>
+        <span class="text-[15px] font-semibold text-ink">26 May 2026</span>
+      </div>
+      <div class="h-9 w-px bg-forest/[0.15]"></div>
+      <div class="flex flex-col gap-1">
+        <span data-i18n="home.hero.guests" class="text-[11px] tracking-[1px] text-muted-2">GUESTS</span>
+        <span class="text-[15px] font-semibold text-ink">2 Adults</span>
+      </div>
+      <div class="flex-1"></div>
+      <a href="/booking" data-i18n="home.hero.checkAvail" class="rounded-lg bg-gold px-7 py-3.5 text-sm font-semibold text-white no-underline hover:text-white">Check Availability</a>
+    </div>
+  </div>
+
+  <section class="mx-auto mt-28 mb-16 grid max-w-content grid-cols-1 gap-10 px-6 pt-16 sm:grid-cols-3 sm:gap-0 sm:pt-0 md:px-16">
+    <div class="border-forest/[0.12] px-6 text-center sm:border-r">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-4"><line x1="3" y1="7" x2="21" y2="7"></line><path d="M5 7 C5 13 8 15 12 15 C16 15 19 13 19 7"></path><line x1="5" y1="7" x2="5" y2="4"></line><line x1="19" y1="7" x2="19" y2="4"></line></svg>
+      <div data-i18n="home.phil.restTitle" class="mb-2 font-serif text-2xl text-ink md:text-[26px]">Rest</div>
+      <div data-i18n="home.phil.restDesc" class="text-sm leading-[1.6] text-muted">Slow down and rest in the embrace of nature.</div>
+    </div>
+    <div class="border-forest/[0.12] px-6 text-center sm:border-r">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-4"><path d="M12 21 C12 14 8 12 8 7 C8 4.5 10 3 12 3 C14 3 16 4.5 16 7 C16 12 12 14 12 21 Z"></path><path d="M12 10 L12 3"></path></svg>
+      <div data-i18n="home.phil.reconnectTitle" class="mb-2 font-serif text-2xl text-ink md:text-[26px]">Reconnect</div>
+      <div data-i18n="home.phil.reconnectDesc" class="text-sm leading-[1.6] text-muted">Reconnect with loved ones, nature, and what truly matters.</div>
+    </div>
+    <div class="px-6 text-center">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1E3A2B" stroke-width="1.4" class="mx-auto mb-4"><path d="M12 16 A6 6 0 0 1 18 16"></path><circle cx="12" cy="16" r="0.5" fill="#1E3A2B"></circle><line x1="12" y1="4" x2="12" y2="8"></line><line x1="4" y1="16" x2="6" y2="16"></line><line x1="18" y1="16" x2="20" y2="16"></line><line x1="6" y1="8" x2="7.5" y2="9.5"></line><line x1="18" y1="8" x2="16.5" y2="9.5"></line><line x1="20" y1="20" x2="4" y2="20"></line></svg>
+      <div data-i18n="home.phil.renewTitle" class="mb-2 font-serif text-2xl text-ink md:text-[26px]">Renew</div>
+      <div data-i18n="home.phil.renewDesc" class="text-sm leading-[1.6] text-muted">Renew your mind, body and spirit.</div>
+    </div>
+  </section>
+
+  <section class="mx-auto mb-24 max-w-content-lg px-6 text-center md:px-16">
+    <div data-i18n="home.exp.eyebrow" class="mb-3 text-xs font-semibold tracking-[2px] text-gold">EXPERIENCES</div>
+    <div data-i18n="home.exp.heading" class="mb-12 font-serif text-3xl text-ink md:text-[38px]">Simple Moments, Lasting Memories</div>
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {experienceCards.map((card) => (
+        <div class="rounded-card-lg bg-white text-left shadow-card">
+          <ImageSlot placeholder={card.placeholder} class="h-[150px] w-full" rounded="none" />
+          <div class="p-4">
+            <div class="mb-3.5 -mt-[42px] flex h-[34px] w-[34px] items-center justify-center rounded-full bg-forest shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <div data-i18n={card.i18nTitle} class="mb-1.5 font-serif text-base text-ink">{card.title}</div>
+            <div data-i18n={card.i18nDesc} class="text-[12.5px] leading-[1.5] text-muted">{card.desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-cream-dark px-6 py-16 md:px-16">
+    <div class="mx-auto flex max-w-content flex-col items-center gap-8 md:flex-row md:gap-12">
+      <ImageSlot placeholder="Family by the river" class="h-[220px] w-full flex-shrink-0 md:w-[340px]" rounded="lg" />
+      <div>
+        <div data-i18n="home.testimonial.quote" class="mb-4 font-serif text-xl italic leading-[1.5] text-ink md:text-[22px]">
+          "A perfect escape from the city. The sound of the river, the fresh air, the warm hospitality — everything we needed to slow down and reconnect as a family."
+        </div>
+        <div data-i18n="home.testimonial.name" class="text-sm font-semibold text-ink">Ahmad Hafiz &amp; Family</div>
+        <div data-i18n="home.testimonial.location" class="text-[13px] text-muted">Kuala Lumpur</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto my-24 max-w-content-lg px-6 text-center md:px-16">
+    <div data-i18n="home.gallery.eyebrow" class="mb-3 text-xs font-semibold tracking-[2px] text-gold">GALLERY</div>
+    <div data-i18n="home.gallery.heading" class="mb-10 font-serif text-3xl text-ink md:text-[38px]">A Glimpse of Our Homestead</div>
+    <div class="mb-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+      <ImageSlot placeholder="Cabin interior" class="h-[200px] w-full" rounded="lg" />
+      <ImageSlot placeholder="Garden path" class="h-[200px] w-full" rounded="lg" />
+      <ImageSlot placeholder="River view" class="h-[200px] w-full" rounded="lg" />
+      <ImageSlot placeholder="Evening dining deck" class="h-[200px] w-full" rounded="lg" />
+    </div>
+    <a href="/gallery" data-i18n="home.gallery.viewFull" class="inline-flex items-center gap-2 rounded-lg bg-forest px-7 py-3.5 text-sm font-semibold text-white no-underline hover:text-white">
+      View Full Gallery
+    </a>
+  </section>
+
+  <section class="mx-auto mb-24 grid max-w-content grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:px-16">
+    <div>
+      <div data-i18n="home.location.eyebrow" class="mb-3 text-xs font-semibold tracking-[2px] text-gold">OUR LOCATION</div>
+      <div data-i18n="home.location.heading" class="mb-4 font-serif text-3xl leading-[1.25] text-ink md:text-[34px]">Discover Sungai Kerau, Karak</div>
+      <div data-i18n="home.location.body" class="mb-6 text-[15px] leading-[1.7] text-muted">
+        Tucked away in the lush greenery of Karak, Pahang — where rivers flow, birds sing, and time slows down.
+      </div>
+      <a href="/location" data-i18n="home.location.directions" class="inline-flex items-center gap-2 rounded-lg bg-forest px-6 py-3.5 text-sm font-semibold text-white no-underline hover:text-white">Get Directions</a>
+    </div>
+    <ImageSlot placeholder="Map: Sungai Kerau, Karak" class="h-[280px] w-full" rounded="lg" />
+  </section>
+
+  <Footer />
+</Layout>

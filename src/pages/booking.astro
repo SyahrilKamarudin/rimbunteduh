@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import BookingWizard from '../components/BookingWizard';
+---
+<Layout title="Book Your Stay | Rimbun Teduh Homestead Farm" description="Reserve your cabin stay at Rimbun Teduh Homestead Farm.">
+  <Nav />
+  <BookingWizard client:load />
+</Layout>

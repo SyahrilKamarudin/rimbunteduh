@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+
+const attractions = [
+  { key: 'a1', placeholder: 'Elephants at Kuala Gandah', title: 'Kuala Gandah Elephant Centre', desc: "Meet and learn about Malaysia's National Elephant Conservation Centre, 30 minutes away.", seasonal: false },
+  { key: 'a2', placeholder: 'Waterfall in rainforest', title: 'Waterfalls & Rivers', desc: 'Cool cascades and clear river pools tucked in the surrounding jungle, perfect for a dip.', seasonal: false },
+  { key: 'a3', placeholder: 'Vanilla farm vines', title: 'Vanilla Farm', desc: 'Tour a working vanilla plantation and learn how the prized pods are grown and cured.', seasonal: false },
+  { key: 'a4', placeholder: 'Durian orchard', title: 'Seasonal Durian', desc: 'Feast on fresh Musang King and Kampung durian straight from local orchards, in season.', seasonal: true },
+];
+---
+<Layout title="Location | Rimbun Teduh Homestead Farm" description="Discover the heart of Sungai Kerau, Karak, Pahang.">
+  <Nav active="location" />
+
+  <div class="relative h-[260px] w-full md:h-[340px]">
+    <ImageSlot placeholder="Aerial view of Sungai Kerau valley" class="absolute inset-0 h-full w-full" rounded="none" />
+    <div class="absolute inset-0 bg-[rgba(20,30,20,0.5)] pointer-events-none"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+      <div class="max-w-[720px] rounded-2xl bg-[rgba(15,22,15,0.32)] px-8 py-7 backdrop-blur-[2px]">
+        <div data-i18n="location.hero.title" class="font-serif text-2xl font-medium leading-[1.2] text-white md:text-[36px]">Discover the Heart of Sungai Kerau, Karak</div>
+        <div class="mt-3 font-serif text-base italic text-[#E8C878]">Pahang, Malaysia</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="mx-auto my-20 max-w-content-lg px-6 md:px-16">
+    <ImageSlot placeholder="Full-width map: Sungai Kerau, Karak, Pahang" class="h-[280px] w-full md:h-[420px]" rounded="lg" />
+  </section>
+
+  <section class="mx-auto mb-24 max-w-content-lg px-6 text-center md:px-16">
+    <div data-i18n="location.attractions.eyebrow" class="mb-3 text-xs font-semibold tracking-[2px] text-gold">NEARBY ATTRACTIONS</div>
+    <div data-i18n="location.attractions.heading" class="mb-12 font-serif text-3xl text-ink md:text-[36px]">Things to See &amp; Do Around Us</div>
+    <div class="grid grid-cols-1 gap-6 text-left sm:grid-cols-2 lg:grid-cols-4">
+      {attractions.map((a) => (
+        <div class="overflow-hidden rounded-card-lg bg-white shadow-card">
+          <div class="relative">
+            <ImageSlot placeholder={a.placeholder} class="h-40 w-full" rounded="none" />
+            {a.seasonal && (
+              <div data-i18n="location.attractions.seasonal" class="absolute right-3 top-3 rounded-full bg-gold px-2.5 py-1 text-[11px] font-semibold text-white">SEASONAL</div>
+            )}
+          </div>
+          <div class="p-5">
+            <div data-i18n={`location.attractions.${a.key}title`} class="mb-2 font-serif text-[17px] text-ink">{a.title}</div>
+            <div data-i18n={`location.attractions.${a.key}desc`} class="text-[13px] leading-[1.6] text-muted">{a.desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mx-auto mb-24 grid max-w-content grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:px-16">
+    <ImageSlot placeholder="Fresh River Patin cuisine on plate" class="h-[240px] w-full md:h-80" rounded="lg" />
+    <div>
+      <div data-i18n="location.patin.eyebrow" class="mb-3 text-xs font-semibold tracking-[2px] text-gold">LOCAL FLAVOUR</div>
+      <div data-i18n="location.patin.heading" class="mb-4 font-serif text-3xl leading-[1.25] text-ink md:text-[34px]">Fresh River Patin Cuisine</div>
+      <div data-i18n="location.patin.body" class="mb-6 text-[15px] leading-[1.7] text-muted">
+        Sungai Kerau is known for its river patin — a local delicacy served in tempoyak curry, grilled with sambal, or fried crisp. Ask our team about nearby patin restaurants during your stay.
+      </div>
+      <a href="/booking" data-i18n="location.patin.button" class="inline-flex items-center gap-2 rounded-lg bg-forest px-6 py-3.5 text-sm font-semibold text-white no-underline hover:text-white">Book Your Stay</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

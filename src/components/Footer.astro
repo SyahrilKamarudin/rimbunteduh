@@ -1,0 +1,55 @@
+---
+import ImageSlot from './ImageSlot.astro';
+---
+<footer class="bg-forest-dark px-6 py-16 text-footer-heading md:px-16">
+  <div class="mx-auto grid max-w-content-lg grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <div>
+      <div class="mb-4 flex items-center gap-3">
+        <ImageSlot placeholder="Logo" rounded="full" class="h-11 w-11" />
+        <div class="flex flex-col leading-tight">
+          <span class="font-serif text-[17px] font-semibold text-white">RIMBUN TEDUH</span>
+          <span class="text-[9px] tracking-[2px] text-footer-muted">HOMESTEAD FARM</span>
+        </div>
+      </div>
+      <p data-i18n="footer.blurb" class="max-w-[280px] text-sm leading-[1.7] text-footer-body-2">
+        A nature farmstay in Karak, Pahang. Rest, reconnect, and renew in harmony with nature.
+      </p>
+    </div>
+
+    <div>
+      <div data-i18n="footer.quickLinks" class="mb-4 text-xs font-semibold tracking-[1.5px] text-gold">QUICK LINKS</div>
+      <div class="flex flex-col gap-2.5">
+        <a href="/" data-i18n="nav.home" class="text-sm text-footer-body no-underline">Home</a>
+        <a href="/about" data-i18n="nav.about" class="text-sm text-footer-body no-underline">About</a>
+        <a href="/experiences" data-i18n="nav.experiences" class="text-sm text-footer-body no-underline">Experiences</a>
+        <a href="/gallery" data-i18n="nav.gallery" class="text-sm text-footer-body no-underline">Gallery</a>
+        <a href="/location" data-i18n="nav.location" class="text-sm text-footer-body no-underline">Location</a>
+        <a href="/booking" data-i18n="nav.bookNow" class="text-sm text-footer-body no-underline">Book Now</a>
+      </div>
+    </div>
+
+    <div>
+      <div data-i18n="footer.contact" class="mb-4 text-xs font-semibold tracking-[1.5px] text-gold">CONTACT US</div>
+      <div class="flex flex-col gap-3 text-sm text-footer-body">
+        <span>+60 12-345 6789</span>
+        <span>hello@rimbunteduh.com</span>
+        <span>www.rimbunteduh.com</span>
+      </div>
+    </div>
+
+    <div>
+      <div data-i18n="footer.visit" class="mb-4 text-xs font-semibold tracking-[1.5px] text-gold">VISIT US</div>
+      <div class="text-sm leading-[1.7] text-footer-body">
+        Lot 1234, Kampung Sungai Kerau, 26600 Karak, Pahang, Malaysia
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-10 flex max-w-content-lg flex-col gap-3 border-t border-white/[0.12] pt-[22px] text-xs text-[#8FA089] md:flex-row md:items-center md:justify-between">
+    <span data-i18n="footer.copyright">© 2026 Rimbun Teduh Homestead Farm. All rights reserved.</span>
+    <div class="flex gap-6">
+      <span data-i18n="footer.privacy">Privacy Policy</span>
+      <span data-i18n="footer.terms">Terms &amp; Conditions</span>
+    </div>
+  </div>
+</footer>
