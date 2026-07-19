@@ -6,10 +6,10 @@ import Footer from '../components/Footer.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 
 const attractions = [
-  { key: 'a1', placeholder: 'Elephants at Kuala Gandah', title: 'Kuala Gandah Elephant Centre', desc: "Meet and learn about Malaysia's National Elephant Conservation Centre, 30 minutes away.", seasonal: false },
-  { key: 'a2', placeholder: 'Waterfall in rainforest', title: 'Waterfalls & Rivers', desc: 'Cool cascades and clear river pools tucked in the surrounding jungle, perfect for a dip.', seasonal: false },
-  { key: 'a3', placeholder: 'Vanilla farm vines', title: 'Vanilla Farm', desc: 'Tour a working vanilla plantation and learn how the prized pods are grown and cured.', seasonal: false },
-  { key: 'a4', placeholder: 'Durian orchard', title: 'Seasonal Durian', desc: 'Feast on fresh Musang King and Kampung durian straight from local orchards, in season.', seasonal: true },
+  { key: 'a1', image: '/images/kuala-gandah-elephant.jpg', title: 'Kuala Gandah Elephant Centre', desc: "Meet and learn about Malaysia's National Elephant Conservation Centre, 30 minutes away.", seasonal: false },
+  { key: 'a2', image: '/images/waterfall-river.webp', title: 'Waterfalls & Rivers', desc: 'Cool cascades and clear river pools tucked in the surrounding jungle, perfect for a dip.', seasonal: false },
+  { key: 'a3', image: '/images/vanilla-farm.webp', title: 'Vanilla Farm', desc: 'Tour a working vanilla plantation and learn how the prized pods are grown and cured.', seasonal: false },
+  { key: 'a4', image: '/images/durian-seasonal.jpg', title: 'Seasonal Durian', desc: 'Feast on fresh Musang King and Kampung durian straight from local orchards, in season.', seasonal: true },
 ];
 ---
 <Layout title="Location | Rimbun Teduh Homestead Farm" description="Discover the heart of Sungai Kerau, Karak, Pahang.">
@@ -44,7 +44,7 @@ const attractions = [
       {attractions.map((a) => (
         <div class="overflow-hidden rounded-card-lg bg-white shadow-card">
           <div class="relative">
-            <ImageSlot placeholder={a.placeholder} class="h-40 w-full" rounded="none" />
+            <img src={a.image} alt={a.title} class="h-40 w-full object-cover" />
             {a.seasonal && (
               <div data-i18n="location.attractions.seasonal" class="absolute right-3 top-3 rounded-full bg-gold px-2.5 py-1 text-[11px] font-semibold text-white">SEASONAL</div>
             )}
