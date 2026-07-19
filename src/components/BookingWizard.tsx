@@ -104,6 +104,8 @@ export default function BookingWizard() {
   const [phone, setPhone] = useState('+60 12-345 6789');
   const [email, setEmail] = useState('');
   const [requests, setRequests] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   function selectDate(ts: number) {
     if (!checkIn || (checkIn && checkOut)) {
@@ -144,13 +146,41 @@ export default function BookingWizard() {
     return { n, label, showArrow: n < 4, filled };
   });
 
-  function goNext() {
+  function isoDate(ts: number | null): string {
+    if (!ts) return '';
+    return new Date(ts).toISOString().slice(0, 10);
+  }
+
+  async function goNext() {
     if (step === 4) {
-      const refDate = checkIn ? new Date(checkIn) : new Date();
-      const mm = String(refDate.getUTCMonth() + 1).padStart(2, '0');
-      const dd = String(refDate.getUTCDate()).padStart(2, '0');
-      const rand = String(Math.floor(Math.random() * 90) + 10);
-      const reference = `RT-2026-${mm}${dd}${rand}`;
+      setSubmitting(true);
+      setSubmitError(false);
+      let reference: string;
+      try {
+        const res = await fetch('/api/bookings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            checkIn: isoDate(checkIn),
+            checkOut: isoDate(checkOut),
+            adults, children, bbq, foraging, breakfast, name, phone, email, requests,
+            cabinSubtotal, bbqCost, foragingCost, breakfastCost, total,
+          }),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          reference = data.booking.reference;
+        } else {
+          setSubmitError(true);
+          setSubmitting(false);
+          return;
+        }
+      } catch (e) {
+        setSubmitError(true);
+        setSubmitting(false);
+        return;
+      }
+
       const data: BookingData = {
         checkInLabel, checkOutLabel, nights, adults, children, guestsSummary,
         bbq, foraging, breakfast, name, phone, email, total, cabinSubtotal, foragingCost, breakfastCost, bbqCost, reference,
@@ -338,12 +368,18 @@ export default function BookingWizard() {
             </div>
           )}
 
+          {submitError && (
+            <div className="mt-4 rounded-lg bg-[#F5E4E1] px-4 py-3 text-sm text-[#a8402f]">
+              Something went wrong submitting your booking. Please try again.
+            </div>
+          )}
+
           <div className="mt-9 flex justify-between border-t border-forest/10 pt-6">
             {step > 1 ? (
               <button type="button" onClick={() => setStep((s) => Math.max(1, s - 1))} className="rounded-lg border-[1.5px] border-forest/20 bg-white px-6 py-3.5 text-sm font-semibold text-ink">{t.back}</button>
             ) : <div />}
-            <button type="button" onClick={goNext} className="flex items-center gap-2 rounded-lg bg-gold px-8 py-3.5 text-sm font-semibold text-white">
-              {step === 4 ? t.confirmBooking : t.next}
+            <button type="button" onClick={goNext} disabled={submitting} className="flex items-center gap-2 rounded-lg bg-gold px-8 py-3.5 text-sm font-semibold text-white disabled:opacity-60">
+              {step === 4 ? (submitting ? 'Submitting…' : t.confirmBooking) : t.next}
             </button>
           </div>
         </div>

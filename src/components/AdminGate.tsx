@@ -1,34 +1,35 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import AdminDashboard from './AdminDashboard';
-
-// Demo-only client-side gate. Replace with real server-side auth before launch.
-const DEMO_PASSWORD = 'rimbunteduh2026';
 
 export default function AdminGate() {
   const [authed, setAuthed] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    try {
-      if (sessionStorage.getItem('rt_admin_authed') === '1') setAuthed(true);
-    } catch (e) {}
-  }, []);
-
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (password === DEMO_PASSWORD) {
-      try {
-        sessionStorage.setItem('rt_admin_authed', '1');
-      } catch (e) {}
-      setAuthed(true);
-      setError(false);
-    } else {
+    setLoading(true);
+    setError(false);
+    try {
+      const res = await fetch('/api/admin-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password }),
+      });
+      if (res.ok) {
+        setAuthed(true);
+      } else {
+        setError(true);
+      }
+    } catch {
       setError(true);
+    } finally {
+      setLoading(false);
     }
   }
 
-  if (authed) return <AdminDashboard />;
+  if (authed) return <AdminDashboard onUnauthorized={() => setAuthed(false)} />;
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-cream px-6">
@@ -44,7 +45,9 @@ export default function AdminGate() {
           autoFocus
         />
         {error && <div className="mb-2 text-[13px] text-[#a8402f]">Incorrect password.</div>}
-        <button type="submit" className="mt-4 w-full rounded-lg bg-forest py-3 text-sm font-semibold text-white">Log In</button>
+        <button type="submit" disabled={loading} className="mt-4 w-full rounded-lg bg-forest py-3 text-sm font-semibold text-white disabled:opacity-60">
+          {loading ? 'Checking…' : 'Log In'}
+        </button>
       </form>
     </div>
   );

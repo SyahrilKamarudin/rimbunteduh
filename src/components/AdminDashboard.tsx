@@ -1,6 +1,29 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 type Status = 'Confirmed' | 'Pending' | 'Cancelled';
+
+interface ApiBooking {
+  id: string;
+  reference: string;
+  check_in: string;
+  check_out: string;
+  adults: number;
+  children: number;
+  bbq: boolean;
+  foraging: boolean;
+  breakfast: boolean;
+  name: string;
+  phone: string;
+  email: string | null;
+  requests: string | null;
+  cabin_subtotal: number;
+  bbq_cost: number;
+  foraging_cost: number;
+  breakfast_cost: number;
+  total: number;
+  status: Status;
+  created_at: string;
+}
 
 interface Booking {
   ref: string;
@@ -12,16 +35,6 @@ interface Booking {
   total: number;
   status: Status;
 }
-
-const ALL_BOOKINGS: Booking[] = [
-  { ref: 'RT-2026-08241', name: 'Ahmad Hafiz bin Rahman', phone: '+60 12-345 6789', dates: '24–26 Aug 2026', guests: '2 Adults, 1 Child', addons: 'BBQ Set', total: 1440, status: 'Confirmed' },
-  { ref: 'RT-2026-08312', name: 'Nur Aisyah Zainal', phone: '+60 19-234 5678', dates: '31 Aug–2 Sep 2026', guests: '4 Adults', addons: 'BBQ Set, Breakfast', total: 1880, status: 'Pending' },
-  { ref: 'RT-2026-09051', name: 'Lim Wei Jun', phone: '+60 16-778 2201', dates: '5–7 Sep 2026', guests: '2 Adults', addons: '—', total: 1360, status: 'Confirmed' },
-  { ref: 'RT-2026-09122', name: 'Farah Natasha', phone: '+60 13-902 4456', dates: '12–14 Sep 2026', guests: '2 Adults, 2 Children', addons: 'Foraging Session', total: 1450, status: 'Pending' },
-  { ref: 'RT-2026-09201', name: 'Ravi Kumar', phone: '+60 17-556 8890', dates: '20–22 Sep 2026', guests: '3 Adults', addons: 'BBQ Set', total: 1440, status: 'Confirmed' },
-  { ref: 'RT-2026-07150', name: 'Chong Mei Ling', phone: '+60 12-661 3320', dates: '15–17 Jul 2026', guests: '2 Adults', addons: '—', total: 1360, status: 'Cancelled' },
-  { ref: 'RT-2026-10021', name: 'Amirul Hakim', phone: '+60 18-334 9902', dates: '2–4 Oct 2026', guests: '2 Adults, 1 Child', addons: 'Breakfast', total: 1435, status: 'Pending' },
-];
 
 const STATUS_COLORS: Record<Status, { bg: string; color: string }> = {
   Confirmed: { bg: '#E4EFE2', color: '#1E3A2B' },
@@ -39,11 +52,75 @@ const NAV_ITEMS = [
   { label: 'Settings', active: false },
 ];
 
-export default function AdminDashboard() {
-  const [bookings, setBookings] = useState<Booking[]>(ALL_BOOKINGS);
+const MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function formatDateRange(checkIn: string, checkOut: string): string {
+  const a = new Date(checkIn + 'T00:00:00Z');
+  const b = new Date(checkOut + 'T00:00:00Z');
+  const sameMonth = a.getUTCMonth() === b.getUTCMonth() && a.getUTCFullYear() === b.getUTCFullYear();
+  if (sameMonth) {
+    return `${a.getUTCDate()}–${b.getUTCDate()} ${MONTH_ABBR[b.getUTCMonth()]} ${b.getUTCFullYear()}`;
+  }
+  return `${a.getUTCDate()} ${MONTH_ABBR[a.getUTCMonth()]}–${b.getUTCDate()} ${MONTH_ABBR[b.getUTCMonth()]} ${b.getUTCFullYear()}`;
+}
+
+function formatGuests(adults: number, children: number): string {
+  let s = `${adults} Adult${adults === 1 ? '' : 's'}`;
+  if (children > 0) s += `, ${children} Child${children === 1 ? '' : 'ren'}`;
+  return s;
+}
+
+function formatAddons(b: ApiBooking): string {
+  const labels: string[] = [];
+  if (b.bbq) labels.push('BBQ Set');
+  if (b.foraging) labels.push('Foraging Session');
+  if (b.breakfast) labels.push('Breakfast');
+  return labels.length ? labels.join(', ') : '—';
+}
+
+function toDisplayBooking(b: ApiBooking): Booking {
+  return {
+    ref: b.reference,
+    name: b.name,
+    phone: b.phone,
+    dates: formatDateRange(b.check_in, b.check_out),
+    guests: formatGuests(b.adults, b.children),
+    addons: formatAddons(b),
+    total: b.total,
+    status: b.status,
+  };
+}
+
+export default function AdminDashboard({ onUnauthorized }: { onUnauthorized: () => void }) {
+  const [bookings, setBookings] = useState<Booking[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [statusFilter, setStatusFilter] = useState<Status | 'All'>('All');
   const [search, setSearch] = useState('');
   const [selectedRef, setSelectedRef] = useState<string | null>(null);
+
+  async function loadBookings() {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const res = await fetch('/api/bookings', { credentials: 'include' });
+      if (res.status === 401) {
+        onUnauthorized();
+        return;
+      }
+      if (!res.ok) throw new Error('Failed to load bookings');
+      const data = await res.json();
+      setBookings((data.bookings as ApiBooking[]).map(toDisplayBooking));
+    } catch (e) {
+      setLoadError('Could not load bookings. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    loadBookings();
+  }, []);
 
   const filtered = useMemo(
     () =>
@@ -65,9 +142,24 @@ export default function AdminDashboard() {
 
   const selected = bookings.find((b) => b.ref === selectedRef) || null;
 
-  function updateStatus(ref: string, status: Status) {
-    setBookings((prev) => prev.map((b) => (b.ref === ref ? { ...b, status } : b)));
-    setSelectedRef(null);
+  async function updateStatus(ref: string, status: Status) {
+    try {
+      const res = await fetch(`/api/bookings/${ref}`, {
+        method: 'PATCH',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      });
+      if (res.status === 401) {
+        onUnauthorized();
+        return;
+      }
+      if (!res.ok) throw new Error('Update failed');
+      setBookings((prev) => prev.map((b) => (b.ref === ref ? { ...b, status } : b)));
+      setSelectedRef(null);
+    } catch (e) {
+      alert('Could not update booking. Please try again.');
+    }
   }
 
   return (
@@ -157,35 +249,46 @@ export default function AdminDashboard() {
             />
           </div>
 
-          <div className="hidden grid-cols-[1.6fr_1.3fr_0.9fr_1.1fr_0.9fr_0.9fr] border-b border-forest/[0.06] px-6 py-3.5 text-[11px] font-semibold tracking-[0.8px] text-muted-2 md:grid">
-            <div>GUEST</div><div>DATES</div><div>GUESTS</div><div>ADD-ONS</div><div>TOTAL</div><div>STATUS</div>
-          </div>
-
-          {filtered.map((b) => (
-            <div
-              key={b.ref}
-              onClick={() => setSelectedRef(b.ref)}
-              className="grid cursor-pointer grid-cols-2 gap-2 border-b border-forest/[0.06] px-6 py-4 md:grid-cols-[1.6fr_1.3fr_0.9fr_1.1fr_0.9fr_0.9fr] md:items-center md:gap-0"
-            >
-              <div>
-                <div className="text-sm font-semibold text-ink">{b.name}</div>
-                <div className="text-xs text-muted-2">{b.ref}</div>
-              </div>
-              <div className="text-[13px] text-[#3d4a37]">{b.dates}</div>
-              <div className="text-[13px] text-[#3d4a37]">{b.guests}</div>
-              <div className="text-[13px] text-[#3d4a37]">{b.addons}</div>
-              <div className="text-sm font-semibold text-ink">RM {b.total}</div>
-              <div>
-                <span
-                  className="inline-block rounded-full px-3 py-1 text-xs font-semibold"
-                  style={{ background: STATUS_COLORS[b.status].bg, color: STATUS_COLORS[b.status].color }}
-                >
-                  {b.status}
-                </span>
-              </div>
+          {loading && <div className="p-8 text-center text-sm text-muted">Loading bookings…</div>}
+          {loadError && (
+            <div className="p-8 text-center text-sm text-[#a8402f]">
+              {loadError} <button type="button" onClick={loadBookings} className="ml-2 underline">Retry</button>
             </div>
-          ))}
-          {filtered.length === 0 && <div className="p-8 text-center text-sm text-muted">No bookings match your filters.</div>}
+          )}
+
+          {!loading && !loadError && (
+            <>
+              <div className="hidden grid-cols-[1.6fr_1.3fr_0.9fr_1.1fr_0.9fr_0.9fr] border-b border-forest/[0.06] px-6 py-3.5 text-[11px] font-semibold tracking-[0.8px] text-muted-2 md:grid">
+                <div>GUEST</div><div>DATES</div><div>GUESTS</div><div>ADD-ONS</div><div>TOTAL</div><div>STATUS</div>
+              </div>
+
+              {filtered.map((b) => (
+                <div
+                  key={b.ref}
+                  onClick={() => setSelectedRef(b.ref)}
+                  className="grid cursor-pointer grid-cols-2 gap-2 border-b border-forest/[0.06] px-6 py-4 md:grid-cols-[1.6fr_1.3fr_0.9fr_1.1fr_0.9fr_0.9fr] md:items-center md:gap-0"
+                >
+                  <div>
+                    <div className="text-sm font-semibold text-ink">{b.name}</div>
+                    <div className="text-xs text-muted-2">{b.ref}</div>
+                  </div>
+                  <div className="text-[13px] text-[#3d4a37]">{b.dates}</div>
+                  <div className="text-[13px] text-[#3d4a37]">{b.guests}</div>
+                  <div className="text-[13px] text-[#3d4a37]">{b.addons}</div>
+                  <div className="text-sm font-semibold text-ink">RM {b.total}</div>
+                  <div>
+                    <span
+                      className="inline-block rounded-full px-3 py-1 text-xs font-semibold"
+                      style={{ background: STATUS_COLORS[b.status].bg, color: STATUS_COLORS[b.status].color }}
+                    >
+                      {b.status}
+                    </span>
+                  </div>
+                </div>
+              ))}
+              {filtered.length === 0 && <div className="p-8 text-center text-sm text-muted">No bookings match your filters.</div>}
+            </>
+          )}
         </div>
       </main>
 
