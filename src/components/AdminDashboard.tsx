@@ -165,7 +165,7 @@ export default function AdminDashboard({ onUnauthorized }: { onUnauthorized: () 
         <div className="mb-5 flex items-center gap-2.5 border-b border-white/10 px-6 pb-6">
           <div
             className="h-9 w-9 flex-shrink-0 rounded-full bg-cover bg-no-repeat"
-            style={{ backgroundImage: "url('/logo.png')", backgroundSize: '220% auto', backgroundPosition: 'center 18%' }}
+            style={{ backgroundImage: "url('/logo.jpg')", backgroundSize: '220% auto', backgroundPosition: 'center 18%' }}
           ></div>
           <div className="flex flex-col leading-tight">
             <span className="font-serif text-[15px] font-semibold text-white">RIMBUN TEDUH</span>

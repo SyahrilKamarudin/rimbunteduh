@@ -36,7 +36,7 @@ export default function AdminGate() {
       <form onSubmit={handleSubmit} className="w-full max-w-[380px] rounded-card-lg bg-white p-8 shadow-card">
         <div
           className="mb-4 h-14 w-14 rounded-full bg-cover bg-no-repeat"
-          style={{ backgroundImage: "url('/logo.png')", backgroundSize: '220% auto', backgroundPosition: 'center 18%' }}
+          style={{ backgroundImage: "url('/logo.jpg')", backgroundSize: '220% auto', backgroundPosition: 'center 18%' }}
         ></div>
         <div className="mb-1 font-serif text-2xl text-ink">Admin Login</div>
         <div className="mb-6 text-sm text-muted">Rimbun Teduh Homestead Farm</div>
