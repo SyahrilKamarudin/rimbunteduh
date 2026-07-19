@@ -163,7 +163,10 @@ export default function AdminDashboard({ onUnauthorized }: { onUnauthorized: () 
     <div className="flex min-h-screen bg-cream">
       <aside className="flex w-60 flex-shrink-0 flex-col bg-forest-dark py-6 text-footer-heading">
         <div className="mb-5 flex items-center gap-2.5 border-b border-white/10 px-6 pb-6">
-          <div className="h-9 w-9 flex-shrink-0 rounded-full bg-gold"></div>
+          <div
+            className="h-9 w-9 flex-shrink-0 rounded-full bg-cover bg-no-repeat"
+            style={{ backgroundImage: "url('/logo.png')", backgroundSize: '220% auto', backgroundPosition: 'center 18%' }}
+          ></div>
           <div className="flex flex-col leading-tight">
             <span className="font-serif text-[15px] font-semibold text-white">RIMBUN TEDUH</span>
             <span className="text-[9px] tracking-[1.5px] text-footer-muted">ADMIN PANEL</span>

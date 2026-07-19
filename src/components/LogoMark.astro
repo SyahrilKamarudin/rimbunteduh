@@ -1,0 +1,12 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+<div
+  class={`flex-shrink-0 overflow-hidden rounded-full bg-cover bg-no-repeat ${className}`}
+  style="background-image:url('/logo.png'); background-size:220% auto; background-position:center 18%;"
+  role="img"
+  aria-label="Rimbun Teduh Homestead Farm logo"
+></div>
