@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { translations, type Lang } from '../i18n/translations';
 import type { BookingData } from './BookingWizard';
 
-const WHATSAPP_NUMBER = '60123456789';
+const WHATSAPP_NUMBER = '60123856967';
 
 function useLang(): Lang {
   const [lang, setLang] = useState<Lang>('en');
