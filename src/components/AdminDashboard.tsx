@@ -47,9 +47,6 @@ const STATUS_OPTIONS: (Status | 'All')[] = ['All', 'Confirmed', 'Pending', 'Canc
 const NAV_ITEMS = [
   { label: 'Dashboard', active: true },
   { label: 'Bookings', active: false },
-  { label: 'Enquiries', active: false },
-  { label: 'Availability', active: false },
-  { label: 'Settings', active: false },
 ];
 
 const MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

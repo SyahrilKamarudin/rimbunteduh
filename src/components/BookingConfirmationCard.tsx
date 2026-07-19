@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { translations, type Lang } from '../i18n/translations';
 import type { BookingData } from './BookingWizard';
 
+const WHATSAPP_NUMBER = '60123456789';
+
 function useLang(): Lang {
   const [lang, setLang] = useState<Lang>('en');
   useEffect(() => {
@@ -57,6 +59,17 @@ export default function BookingConfirmationCard() {
   const firstName = data.name.split(' ')[0] || data.name;
   const subtitle = t.confirmed.subtitle.replace('{name}', firstName);
 
+  const whatsappMessage = [
+    `Hi, I've just confirmed a booking (Ref: ${data.reference}).`,
+    `Name: ${data.name}`,
+    `Phone: ${data.phone}`,
+    `Dates: ${data.checkInLabel} – ${data.checkOutLabel}`,
+    `Guests: ${data.guestsSummary}`,
+    `Add-ons: ${addonsText}`,
+    `Total: RM ${data.total.toLocaleString()}`,
+  ].join('\n');
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+
   return (
     <>
       <section className="mx-auto mt-16 max-w-[640px] px-6 text-center">
@@ -86,7 +99,18 @@ export default function BookingConfirmationCard() {
             </div>
             <div className="flex items-center justify-between border-t border-forest/[0.12] pt-4">
               <span className="text-[15px] font-semibold text-ink">{t.summary.totalPaid}</span>
-              <span className="text-[22px] font-bold text-ink">RM {data.total.toLocaleString()}</span>
+              <div className="flex items-center gap-3">
+                <span className="text-[22px] font-bold text-ink">RM {data.total.toLocaleString()}</span>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Notify us via WhatsApp"
+                  className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white no-underline hover:text-white"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"></path></svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
